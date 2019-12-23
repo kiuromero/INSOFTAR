@@ -1,0 +1,42 @@
+<div class="col-md4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="form">
+                <div class="form-group">
+                    <input type="number" name="cedula"  (input)="onSearchChange($event.target.value)" [(ngModel)]="user.cedula" placeholder="Cedula" class="form-control" autofocus>                    
+               
+                </div>
+                <div class="form-group">
+                   <input type="text" name="nombres" [(ngModel)]="user.nombres" placeholder="Nombres" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Apellidos" [(ngModel)]="user.apellidos" placeholder="Apellidos" class="form-control" autofocus>
+                 </div>
+                 <div class="form-group">
+                    <input type="email" name="Email" (input)="onSearchChangeEmail($event.target.value)" [(ngModel)]="user.email" placeholder="Email" class="form-control"  ngModel required autofocus aria-describedby="emailHelp">
+                 </div>
+                 <div class="form-group">
+                    <input type="number" name="telefono" [(ngModel)]="user.telefono" placeholder="Telefono" class="form-control" autofocus>
+                 </div>
+                 <button class="btn btn-success btn-block" (click)="edit ? updateUser() : saveUser()">
+                     Guardar
+                 </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">        
+        <h3> {{ user.cedula }}</h3>
+        <h3> {{ user.nombres}} {{ user.apellidos}}</h3>        
+        <p> {{ user.email}}</p>
+        <p> {{ user.telefono}}</p>
+        
+        
+    </div>
+
+</div>
+
+
+
